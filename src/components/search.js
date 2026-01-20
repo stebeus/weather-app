@@ -4,5 +4,5 @@ const inputQuery = document.querySelector("#query");
 
 export function handleSearch(event) {
   event.preventDefault();
-  fetchTimeline(inputQuery.value);
+  renderFetchedTimeline(inputQuery.value);
 }
