@@ -20,3 +20,12 @@ function renderForecast({
 
   main.appendChild(clone);
 }
+
+export async function renderFetchedTimeline(location) {
+  try {
+    const weatherData = await fetchTimeline(location);
+    renderForecast(weatherData);
+  } catch (error) {
+    console.error(error);
+  }
+}
