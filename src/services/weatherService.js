@@ -1,3 +1,18 @@
+function getWeather({
+  resolvedAddress,
+  description,
+  currentConditions: { temp, feelslike, humidity, icon },
+}) {
+  return {
+    resolvedAddress,
+    temp,
+    feelslike,
+    humidity,
+    description,
+    icon,
+  };
+}
+
 async function fetchTimeline(location) {
   const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=XT52FMHNWKEWVE7B5XQZR4MGY`;
 
@@ -8,7 +23,7 @@ async function fetchTimeline(location) {
     }
 
     const data = await response.json();
-    return data;
+    return getWeather(data);
   } catch (error) {
     console.error(error);
   }
