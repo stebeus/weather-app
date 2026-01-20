@@ -3,3 +3,5 @@ import "/favicon.png";
 import { handleSearch } from "./components/search-box";
 
 const searchBox = document.querySelector(".search-box");
+
+searchBox.addEventListener("submit", handleSearch);
