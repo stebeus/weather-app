@@ -1,4 +1,4 @@
-import { fetchTimeline } from "../services/weatherService";
+import { renderFetchedTimeline } from "./display";
 
 const inputQuery = document.querySelector("#query");
 
