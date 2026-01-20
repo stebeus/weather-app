@@ -14,7 +14,7 @@ function renderForecast({
 
   clone.querySelector("#title").textContent = resolvedAddress;
   clone.querySelector("#temperature").textContent = temp;
-  clone.querySelector("#feelslike").textContent = feelslike;
+  clone.querySelector("#feels-like").textContent = feelslike;
   clone.querySelector("#humidity").textContent = humidity;
   clone.querySelector("#description").textContent = description;
 
