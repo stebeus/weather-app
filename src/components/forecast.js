@@ -1,3 +1,5 @@
+import { fetchTimeline } from "../services/weatherService";
+
 const main = document.querySelector("main");
 
 function renderForecast({
