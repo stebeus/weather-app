@@ -7,7 +7,34 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <header>
+        <h1>Weather App</h1>
+        <form class="search-box">
+          <input
+            type="search"
+            name="query"
+            id="query"
+            placeholder="Search for a location..."
+          />
+          <button type="submit">Search</button>
+        </form>
+        <div class="actions">
+          <label class="switch">
+            <input type="checkbox" data-action="switch-unit" />
+            <span class="slider">
+              <span data-unit="fahrenheit" title="Toggle Fahrenheit">°F</span>
+              <span data-unit="celsius" title="Toggle Celsius">°C</span>
+            </span>
+          </label>
+          <select data-action="switch-theme">
+            <option value="auto">Auto</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+      </header>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
