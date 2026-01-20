@@ -13,7 +13,7 @@ function getWeather({
   };
 }
 
-async function fetchTimeline(location) {
+export async function fetchTimeline(location) {
   const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=XT52FMHNWKEWVE7B5XQZR4MGY`;
 
   try {
@@ -28,5 +28,3 @@ async function fetchTimeline(location) {
     console.error(error);
   }
 }
-
-export { fetchTimeline };
