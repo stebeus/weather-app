@@ -12,7 +12,7 @@ function renderForecast({
   const template = document.querySelector("#forecast-template");
   const clone = template.content.cloneNode(true);
 
-  clone.querySelector("#title").textContent = resolvedAddress;
+  clone.querySelector("#location").textContent = resolvedAddress;
   clone.querySelector("#temperature").textContent = temp;
   clone.querySelector("#feels-like").textContent = feelslike;
   clone.querySelector("#humidity").textContent = humidity;
