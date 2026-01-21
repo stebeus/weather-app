@@ -7,6 +7,9 @@ import {
 
 const main = document.querySelector("main");
 
+const setDatasetValue = (element, id, value) =>
+  (element.querySelector(`#${id}`).dataset.value = value);
+
 function renderForecast({
   resolvedAddress,
   temp,
