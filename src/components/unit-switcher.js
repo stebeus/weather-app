@@ -18,9 +18,8 @@ function renderConvertedUnit(element, converter, unit) {
   element.textContent = formatTemperature(element.dataset.value, unit);
 }
 
-function handleUnitSwitchToggler() {
+function switchConversionRender() {
   const ids = ["temperature", "feels-like"];
-  switchUnit();
 
   for (const id of ids) {
     const element = document.getElementById(id);
@@ -30,6 +29,11 @@ function handleUnitSwitchToggler() {
       ? renderConvertedUnit(element, convertToCelsius, "C")
       : renderConvertedUnit(element, convertToFahrenheit);
   }
+}
+
+function handleUnitSwitchToggler() {
+  switchUnit();
+  switchConversionRender();
 }
 
 export { handleUnitSwitchToggler, currentUnitQuery };
