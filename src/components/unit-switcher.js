@@ -16,7 +16,7 @@ function toggleFahrenheit(value, element) {
   element.textContent = formatTemperature(value);
 }
 
-export function switchUnit(event) {
+export function handleUnitSwitcher(event) {
   const ids = ["temperature", "feels-like"];
 
   for (const id of ids) {
