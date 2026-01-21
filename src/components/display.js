@@ -49,7 +49,7 @@ function renderForecast({
     assignValuesToElement(
       clone,
       formattedElement.id,
-      formattedElement.key,
+      formattedElement.value,
       formattedElement.formatter,
       currentUnitLabel,
     );
