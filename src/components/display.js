@@ -45,18 +45,16 @@ function renderForecast({
     new FormattedElement("humidity", humidity, formatHumidity),
   ];
 
-  for (const node of nodes) {
+  for (const formattedElement of formattedElements) {
     assignValuesToElement(
       clone,
-      node.id,
-      node.key,
-      formatTemperature,
+      formattedElement.id,
+      formattedElement.key,
+      formattedElement.formatter,
       currentUnitLabel,
     );
   }
 
-  assignValuesToElement(clone, "location", resolvedAddress, formatLocation);
-  assignValuesToElement(clone, "humidity", humidity, formatHumidity);
   assignValuesToElement(clone, "description", description);
 
   updateForecast(clone);
