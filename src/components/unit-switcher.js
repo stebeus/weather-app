@@ -18,7 +18,7 @@ function renderConvertedUnit(element, converter, unit) {
   element.textContent = formatTemperature(element.dataset.value, unit);
 }
 
-export function handleUnitSwitchToggler() {
+function handleUnitSwitchToggler() {
   const ids = ["temperature", "feels-like"];
   switchUnit();
 
@@ -31,3 +31,5 @@ export function handleUnitSwitchToggler() {
       : renderConvertedUnit(element, convertToFahrenheit);
   }
 }
+
+export { handleUnitSwitchToggler, currentUnitQuery };
