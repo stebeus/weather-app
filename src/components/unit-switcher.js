@@ -31,7 +31,7 @@ export function handleUnitSwitchToggler() {
 
     toggleSwitch(
       isCelsiusToggled,
-      renderConvertedUnit(element, convertToCelsius),
+      renderConvertedUnit(element, convertToCelsius, "C"),
       renderConvertedUnit(element, convertToFahrenheit),
     );
   }
