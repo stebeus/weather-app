@@ -13,6 +13,11 @@ function switchUnit() {
   switchCurrentUnitQuery();
 }
 
+function renderConvertedUnit(element, converter, unit) {
+  element.dataset.value = converter(element.dataset.value);
+  element.textContent = formatTemperature(element.dataset.value, unit);
+}
+
 export function handleUnitSwitchToggler() {
   const ids = ["temperature", "feels-like"];
   switchUnit();
@@ -21,11 +26,9 @@ export function handleUnitSwitchToggler() {
     const element = document.getElementById(id);
 
     if (isCelsiusToggled) {
-      element.dataset.value = convertToCelsius(element.dataset.value);
-      element.textContent = formatTemperature(element.dataset.value, "C");
+      renderConvertedUnit(element, convertToCelsius, "C");
     } else {
-      element.dataset.value = convertToFahrenheit(element.dataset.value);
-      element.textContent = formatTemperature(element.dataset.value);
+      renderConvertedUnit(element, convertToFahrenheit);
     }
   }
 }
