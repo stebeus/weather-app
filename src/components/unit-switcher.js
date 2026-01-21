@@ -27,6 +27,7 @@ export function handleUnitSwitchToggler() {
 
   for (const id of ids) {
     const element = document.getElementById(id);
+    if (!element) return;
 
     toggleSwitch(
       isCelsiusToggled,
