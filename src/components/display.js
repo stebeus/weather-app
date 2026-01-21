@@ -5,6 +5,7 @@ import {
   formatHumidity,
 } from "../utils/formatters";
 import { currentUnitLabel } from "./unit-switcher";
+import { loadWeatherIcon } from "./image-loader";
 
 const main = document.querySelector("main");
 
@@ -34,6 +35,8 @@ function renderForecast({
   feelslike,
   humidity,
   description,
+  icon,
+  conditions,
 }) {
   const template = document.querySelector("#forecast-template");
   const clone = template.content.cloneNode(true);
@@ -56,7 +59,7 @@ function renderForecast({
   }
 
   assignValuesToElement(clone, "description", description);
-
+  loadWeatherIcon(clone, icon, conditions);
   updateForecast(clone);
 }
 
