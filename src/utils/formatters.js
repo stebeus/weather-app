@@ -8,4 +8,6 @@ function formatTemperature(temperature) {
   return temperature + "°F";
 }
 
-export { formatLocation, formatTemperature };
+const formatHumidity = (humidity) => `${humidity}%`;
+
+export { formatLocation, formatTemperature, formatHumidity };
