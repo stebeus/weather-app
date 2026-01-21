@@ -9,7 +9,7 @@ import { currentUnitLabel } from "./unit-switcher";
 const main = document.querySelector("main");
 
 const setDatasetValue = (element, id, value) =>
-  (element.querySelector(`#${id}`).dataset.value = value);
+  (element.getElementById(id).dataset.value = value);
 
 function renderForecast({
   resolvedAddress,
