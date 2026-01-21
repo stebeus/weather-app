@@ -6,14 +6,9 @@ function handleToggleSwitch(event, truthyStatement, falsyStatement) {
   toggleSwitch.checked ? truthyStatement : falsyStatement;
 }
 
-function toggleCelsius(value, element) {
-  value = convertToCelsius(value);
-  element.textContent = formatTemperature(value, "C");
-}
-
-function toggleFahrenheit(value, element) {
-  value = convertToFahrenheit(value);
-  element.textContent = formatTemperature(value);
+function switchUnit(element, converter, unit) {
+  element.dataset.value = converter(element.dataset.value);
+  element.textContent = formatTemperature(element.dataset.value, unit);
 }
 
 export function handleUnitSwitcher(event) {
@@ -21,12 +16,11 @@ export function handleUnitSwitcher(event) {
 
   for (const id of ids) {
     let element = document.getElementById(id);
-    let value = element.dataset.value;
 
     handleToggleSwitch(
       event,
-      toggleCelsius(value, element),
-      toggleFahrenheit(value, element),
+      switchUnit(element, convertToCelsius, "C"),
+      switchUnit(element, convertToFahrenheit),
     );
   }
 }
