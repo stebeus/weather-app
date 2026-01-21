@@ -1,7 +1,7 @@
 import { convertToFahrenheit, convertToCelsius } from "../utils/converters";
 import { formatTemperature } from "../utils/formatters";
 
-let isCelsiusToggled = true;
+let isCelsiusToggled = false;
 let currentUnitQuery = "us";
 
 const toggleCelsius = () => (isCelsiusToggled = !isCelsiusToggled);
