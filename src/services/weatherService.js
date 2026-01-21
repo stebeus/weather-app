@@ -1,7 +1,7 @@
 function getWeather({
   resolvedAddress,
   description,
-  currentConditions: { temp, feelslike, humidity, icon },
+  currentConditions: { temp, feelslike, humidity, icon, conditions },
 }) {
   return {
     resolvedAddress,
@@ -10,6 +10,7 @@ function getWeather({
     humidity,
     description,
     icon,
+    conditions,
   };
 }
 
@@ -22,6 +23,7 @@ export async function fetchTimeline(location, unit) {
     }
 
     const data = await response.json();
+    console.log(data);
     return getWeather(data);
   } catch (error) {
     console.error(error);
