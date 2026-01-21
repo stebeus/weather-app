@@ -4,4 +4,8 @@ const capitalize = (string) =>
 const formatLocation = (location) =>
   location.split(" ").map(capitalize).join(" ");
 
-export { formatLocation };
+function formatTemperature(temperature) {
+  return temperature + "°F";
+}
+
+export { formatLocation, formatTemperature };
