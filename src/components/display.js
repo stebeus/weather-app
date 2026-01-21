@@ -15,6 +15,11 @@ function assignValuesToNode(node, id, key, formatter, formatOptions) {
   if (element.hasAttribute("data-value")) element.dataset.value = key;
 }
 
+function updateForecast(parent, node) {
+  parent.innerHTML = "";
+  parent.appendChild(node);
+}
+
 function renderForecast({
   resolvedAddress,
   temp,
@@ -44,8 +49,7 @@ function renderForecast({
     );
   }
 
-  main.innerHTML = "";
-  main.appendChild(clone);
+  updateForecast(main, clone);
 }
 
 export async function renderFetchedTimeline(location, unit) {
