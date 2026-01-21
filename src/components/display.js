@@ -20,6 +20,10 @@ function renderForecast({
   const template = document.querySelector("#forecast-template");
   const clone = template.content.cloneNode(true);
 
+  setDatasetValue(clone, "temperature", temp);
+  setDatasetValue(clone, "feels-like", feelslike);
+  setDatasetValue(clone, "humidity", humidity);
+
   clone.querySelector("#location").textContent =
     formatLocation(resolvedAddress);
   clone.querySelector("#temperature").textContent =
