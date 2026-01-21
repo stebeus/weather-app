@@ -9,6 +9,6 @@ const roundTemperature = (temperature) => Math.round(temperature);
 const formatTemperature = (temperature, unit) =>
   roundTemperature(temperature) + `°${unit}`;
 
-const formatHumidity = (humidity) => `${humidity}%`;
+const formatHumidity = (humidity) => roundTemperature(humidity) + "%";
 
 export { formatLocation, formatTemperature, formatHumidity };
