@@ -4,11 +4,11 @@ const capitalize = (string) =>
 const formatLocation = (location) =>
   location.split(" ").map(capitalize).join(" ");
 
-const roundTemperature = (temperature) => Math.round(temperature);
+const round = (number) => Math.round(number);
 
 const formatTemperature = (temperature, unit) =>
-  roundTemperature(temperature) + `°${unit}`;
+  round(temperature) + `°${unit}`;
 
-const formatHumidity = (humidity) => roundTemperature(humidity) + "%";
+const formatHumidity = (humidity) => round(humidity) + "%";
 
 export { formatLocation, formatTemperature, formatHumidity };
