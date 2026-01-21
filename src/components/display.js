@@ -38,9 +38,11 @@ function renderForecast({
   const template = document.querySelector("#forecast-template");
   const clone = template.content.cloneNode(true);
 
-  const nodes = [
-    { id: "temperature", key: temp },
-    { id: "feels-like", key: feelslike },
+  const formattedElements = [
+    new FormattedElement("location", resolvedAddress, formatLocation),
+    new FormattedElement("temperature", temp, formatTemperature),
+    new FormattedElement("feels-like", feelslike, formatTemperature),
+    new FormattedElement("humidity", humidity, formatHumidity),
   ];
 
   for (const node of nodes) {
