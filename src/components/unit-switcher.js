@@ -5,9 +5,10 @@ let currentUnitLabel = "F";
 let currentUnitQuery = "us";
 let isCelsiusToggled = false;
 
-const toggleCelsius = () => (isCelsiusToggled = !isCelsiusToggled);
 const switchCurrentUnitQuery = () =>
   (currentUnitQuery = currentUnitQuery === "us" ? "metric" : "us");
+
+const toggleCelsius = () => (isCelsiusToggled = !isCelsiusToggled);
 
 function switchUnit() {
   toggleCelsius();
