@@ -32,8 +32,8 @@ function switchConversionRender() {
     if (!element) return;
 
     isCelsiusToggled
-      ? renderConvertedUnit(element, convertToCelsius, "C")
-      : renderConvertedUnit(element, convertToFahrenheit);
+      ? renderConvertedUnit(element, convertToCelsius, currentUnitLabel)
+      : renderConvertedUnit(element, convertToFahrenheit, currentUnitLabel);
   }
 }
 

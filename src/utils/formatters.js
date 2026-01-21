@@ -6,7 +6,7 @@ const formatLocation = (location) =>
 
 const roundTemperature = (temperature) => Math.round(temperature);
 
-const formatTemperature = (temperature, unit = "F") =>
+const formatTemperature = (temperature, unit) =>
   roundTemperature(temperature) + `°${unit}`;
 
 const formatHumidity = (humidity) => `${humidity}%`;
