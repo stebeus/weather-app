@@ -11,8 +11,8 @@ const main = document.querySelector("main");
 class FormattedElement {
   constructor(id, value, formatter) {
     this.id = id;
-    this.id = value;
-    this.id = formatter;
+    this.value = value;
+    this.formatter = formatter;
   }
 }
 
