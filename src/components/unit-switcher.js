@@ -10,3 +10,8 @@ function toggleCelsius(value, element) {
   value = convertToCelsius(value);
   element.textContent = formatTemperature(value, "C");
 }
+
+function toggleFahrenheit(value, element) {
+  value = convertToFahrenheit(value);
+  element.textContent = formatTemperature(value);
+}
