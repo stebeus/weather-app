@@ -24,7 +24,7 @@ function assignValuesToElement(node, id, value, formatter, formatOptions) {
 }
 
 function updateForecast(node) {
-  main.remove();
+  main.innerHTML = "";
   main.append(node);
 }
 
