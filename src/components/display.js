@@ -30,10 +30,6 @@ function renderForecast({
   const template = document.querySelector("#forecast-template");
   const clone = template.content.cloneNode(true);
 
-  assignValuesToNode(clone, "location", resolvedAddress, formatLocation);
-  assignValuesToNode(clone, "humidity", humidity, formatHumidity);
-  assignValuesToNode(clone, "description", description);
-
   const nodes = [
     { id: "temperature", key: temp },
     { id: "feels-like", key: feelslike },
@@ -48,6 +44,10 @@ function renderForecast({
       currentUnitLabel,
     );
   }
+
+  assignValuesToNode(clone, "location", resolvedAddress, formatLocation);
+  assignValuesToNode(clone, "humidity", humidity, formatHumidity);
+  assignValuesToNode(clone, "description", description);
 
   updateForecast(main, clone);
 }
