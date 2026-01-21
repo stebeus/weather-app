@@ -26,26 +26,23 @@ function renderForecast({
   const clone = template.content.cloneNode(true);
 
   assignValuesToNode(clone, "location", resolvedAddress, formatLocation);
-
-  assignValuesToNode(
-    clone,
-    "temperature",
-    temp,
-    formatTemperature,
-    currentUnitLabel,
-  );
-
-  assignValuesToNode(
-    clone,
-    "feels-like",
-    feelslike,
-    formatTemperature,
-    currentUnitLabel,
-  );
-
   assignValuesToNode(clone, "humidity", humidity, formatHumidity);
-
   assignValuesToNode(clone, "description", description);
+
+  const nodes = [
+    { id: "temperature", key: temp },
+    { id: "feels-like", key: feelslike },
+  ];
+
+  for (const node of nodes) {
+    assignValuesToNode(
+      clone,
+      node.id,
+      node.key,
+      formatTemperature,
+      currentUnitLabel,
+    );
+  }
 
   main.innerHTML = "";
   main.appendChild(clone);
