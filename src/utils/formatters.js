@@ -1,0 +1,2 @@
+const capitalize = (string) =>
+  string[0].toUpperCase(0) + string.slice(1).toLowerCase();
