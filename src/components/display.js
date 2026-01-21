@@ -37,9 +37,9 @@ function renderForecast({
   main.appendChild(clone);
 }
 
-export async function renderFetchedTimeline(location) {
+export async function renderFetchedTimeline(location, unit) {
   try {
-    const weatherData = await fetchTimeline(location);
+    const weatherData = await fetchTimeline(location, unit);
     renderForecast(weatherData);
   } catch (error) {
     console.error(error);
