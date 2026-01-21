@@ -15,9 +15,9 @@ function assignValuesToNode(node, id, key, formatter, formatOptions) {
   if (element.hasAttribute("data-value")) element.dataset.value = key;
 }
 
-function updateForecast(parent, node) {
-  parent.innerHTML = "";
-  parent.appendChild(node);
+function updateForecast(node) {
+  main.remove();
+  main.append(node);
 }
 
 function renderForecast({
@@ -49,7 +49,7 @@ function renderForecast({
   assignValuesToNode(clone, "humidity", humidity, formatHumidity);
   assignValuesToNode(clone, "description", description);
 
-  updateForecast(main, clone);
+  updateForecast(clone);
 }
 
 export async function renderFetchedTimeline(location, unit) {
