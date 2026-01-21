@@ -5,3 +5,5 @@ let isCelsiusToggled = true;
 let currentUnit = "us";
 
 const toggleCelsius = () => (isCelsiusToggled = !isCelsiusToggled);
+const switchCurrentUnit = () =>
+  (currentUnit = currentUnit === "us" ? "metric" : "us");
