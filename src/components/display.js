@@ -8,6 +8,14 @@ import { currentUnitLabel } from "./unit-switcher";
 
 const main = document.querySelector("main");
 
+class FormattedElement {
+  constructor(id, value, formatter) {
+    this.id = id;
+    this.id = value;
+    this.id = formatter;
+  }
+}
+
 function assignValuesToElement(node, id, value, formatter, formatOptions) {
   const element = node.getElementById(id);
 
