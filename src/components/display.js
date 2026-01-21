@@ -17,10 +17,14 @@ function renderForecast({
   const template = document.querySelector("#forecast-template");
   const clone = template.content.cloneNode(true);
 
-  clone.querySelector("#location").textContent = resolvedAddress;
-  clone.querySelector("#temperature").textContent = temp;
-  clone.querySelector("#feels-like").textContent = feelslike;
-  clone.querySelector("#humidity").textContent = humidity;
+  clone.querySelector("#location").textContent =
+    formatLocation(resolvedAddress);
+  clone.querySelector("#temperature").textContent +=
+    ` ${formatTemperature(temp)}`;
+  clone.querySelector("#feels-like").textContent +=
+    ` ${formatTemperature(feelslike)}`;
+  clone.querySelector("#humidity").textContent +=
+    ` ${formatHumidity(humidity)}`;
   clone.querySelector("#description").textContent = description;
 
   main.appendChild(clone);
