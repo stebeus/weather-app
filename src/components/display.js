@@ -35,6 +35,7 @@ function renderForecast({
     ` ${formatHumidity(humidity)}`;
   clone.querySelector("#description").textContent = description;
 
+  main.innerHTML = "";
   main.appendChild(clone);
 }
 
