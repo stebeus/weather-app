@@ -2,11 +2,11 @@ import { convertToFahrenheit, convertToCelsius } from "../utils/converters";
 import { formatTemperature } from "../utils/formatters";
 
 let isCelsiusToggled = true;
-let currentUnit = "us";
+let currentUnitQuery = "us";
 
 const toggleCelsius = () => (isCelsiusToggled = !isCelsiusToggled);
 const switchCurrentUnitQuery = () =>
-  (currentUnit = currentUnit === "us" ? "metric" : "us");
+  (currentUnitQuery = currentUnitQuery === "us" ? "metric" : "us");
 
 export function handleUnitSwitchToggler() {
   const ids = ["temperature", "feels-like"];
