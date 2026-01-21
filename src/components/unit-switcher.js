@@ -15,3 +15,18 @@ function toggleFahrenheit(value, element) {
   value = convertToFahrenheit(value);
   element.textContent = formatTemperature(value);
 }
+
+export function switchUnit(event) {
+  const ids = ["temperature", "feels-like"];
+
+  for (const id of ids) {
+    let element = document.getElementById(id);
+    let value = element.dataset.value;
+
+    handleToggleSwitch(
+      event,
+      toggleCelsius(value, element),
+      toggleFahrenheit(value, element),
+    );
+  }
+}
