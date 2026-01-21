@@ -1,8 +1,9 @@
 import { convertToFahrenheit, convertToCelsius } from "../utils/converters";
 import { formatTemperature } from "../utils/formatters";
 
-let isCelsiusToggled = false;
+let currentUnitLabel = "F";
 let currentUnitQuery = "us";
+let isCelsiusToggled = false;
 
 const toggleCelsius = () => (isCelsiusToggled = !isCelsiusToggled);
 const switchCurrentUnitQuery = () =>
@@ -36,4 +37,4 @@ function handleUnitSwitchToggler() {
   switchConversionRender();
 }
 
-export { handleUnitSwitchToggler, currentUnitQuery };
+export { handleUnitSwitchToggler, currentUnitLabel, currentUnitQuery };
