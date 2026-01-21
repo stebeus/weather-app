@@ -4,9 +4,7 @@ const capitalize = (string) =>
 const formatLocation = (location) =>
   location.split(" ").map(capitalize).join(" ");
 
-function formatTemperature(temperature, unit = "F") {
-  return `${temperature}°${unit}`;
-}
+const formatTemperature = (temperature, unit = "F") => `${temperature}°${unit}`;
 
 const formatHumidity = (humidity) => `${humidity}%`;
 
