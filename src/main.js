@@ -7,3 +7,4 @@ const searchBox = document.querySelector(".search-box");
 const unitToggleSwitch = document.querySelector("[data-action='switch-unit']");
 
 searchBox.addEventListener("submit", handleSearch);
+unitToggleSwitch.addEventListener("click", switchUnit);
