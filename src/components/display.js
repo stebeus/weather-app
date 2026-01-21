@@ -19,10 +19,10 @@ function renderForecast({
 
   clone.querySelector("#location").textContent =
     formatLocation(resolvedAddress);
-  clone.querySelector("#temperature").textContent +=
-    ` ${formatTemperature(temp)}`;
-  clone.querySelector("#feels-like").textContent +=
-    ` ${formatTemperature(feelslike)}`;
+  clone.querySelector("#temperature").textContent =
+    `${formatTemperature(temp)}`;
+  clone.querySelector("#feels-like").textContent =
+    `${formatTemperature(feelslike)}`;
   clone.querySelector("#humidity").textContent +=
     ` ${formatHumidity(humidity)}`;
   clone.querySelector("#description").textContent = description;
