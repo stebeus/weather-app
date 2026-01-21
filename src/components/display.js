@@ -8,11 +8,11 @@ import { currentUnitLabel } from "./unit-switcher";
 
 const main = document.querySelector("main");
 
-function assignValuesToNode(node, id, key, formatter, formatOptions) {
+function assignValuesToElement(node, id, value, formatter, formatOptions) {
   const element = node.getElementById(id);
 
-  element.textContent = formatter ? formatter(key, formatOptions) : key;
-  if (element.hasAttribute("data-value")) element.dataset.value = key;
+  element.textContent = formatter ? formatter(value, formatOptions) : value;
+  if (element.hasAttribute("data-value")) element.dataset.value = value;
 }
 
 function updateForecast(node) {
@@ -36,7 +36,7 @@ function renderForecast({
   ];
 
   for (const node of nodes) {
-    assignValuesToNode(
+    assignValuesToElement(
       clone,
       node.id,
       node.key,
@@ -45,9 +45,9 @@ function renderForecast({
     );
   }
 
-  assignValuesToNode(clone, "location", resolvedAddress, formatLocation);
-  assignValuesToNode(clone, "humidity", humidity, formatHumidity);
-  assignValuesToNode(clone, "description", description);
+  assignValuesToElement(clone, "location", resolvedAddress, formatLocation);
+  assignValuesToElement(clone, "humidity", humidity, formatHumidity);
+  assignValuesToElement(clone, "description", description);
 
   updateForecast(clone);
 }
