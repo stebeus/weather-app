@@ -5,14 +5,18 @@ let currentUnitLabel = "F";
 let currentUnitQuery = "us";
 let isCelsiusToggled = false;
 
+const switchCurrentUnitLabel = () =>
+  (currentUnitLabel = currentUnitLabel === "F" ? "C" : "F");
+
 const switchCurrentUnitQuery = () =>
   (currentUnitQuery = currentUnitQuery === "us" ? "metric" : "us");
 
 const toggleCelsius = () => (isCelsiusToggled = !isCelsiusToggled);
 
 function switchUnit() {
-  toggleCelsius();
+  switchCurrentUnitLabel();
   switchCurrentUnitQuery();
+  toggleCelsius();
 }
 
 function renderConvertedUnit(element, converter, unit) {
