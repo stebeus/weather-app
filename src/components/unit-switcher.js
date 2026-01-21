@@ -18,9 +18,6 @@ function renderConvertedUnit(element, converter, unit) {
   element.textContent = formatTemperature(element.dataset.value, unit);
 }
 
-const toggleSwitch = (condition, truthyExpression, falsyExpression) =>
-  condition ? truthyExpression : falsyExpression;
-
 export function handleUnitSwitchToggler() {
   const ids = ["temperature", "feels-like"];
   switchUnit();
@@ -29,10 +26,8 @@ export function handleUnitSwitchToggler() {
     const element = document.getElementById(id);
     if (!element) return;
 
-    toggleSwitch(
-      isCelsiusToggled,
-      renderConvertedUnit(element, convertToCelsius, "C"),
-      renderConvertedUnit(element, convertToFahrenheit),
-    );
+    isCelsiusToggled
+      ? renderConvertedUnit(element, convertToCelsius, "C")
+      : renderConvertedUnit(element, convertToFahrenheit);
   }
 }
