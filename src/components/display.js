@@ -1,4 +1,9 @@
 import { fetchTimeline } from "../services/weatherService";
+import {
+  formatLocation,
+  formatTemperature,
+  formatHumidity,
+} from "../utils/formatters";
 
 const main = document.querySelector("main");
 
