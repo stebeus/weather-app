@@ -5,14 +5,14 @@ let isCelsiusToggled = true;
 let currentUnit = "us";
 
 const toggleCelsius = () => (isCelsiusToggled = !isCelsiusToggled);
-const switchCurrentUnit = () =>
+const switchCurrentUnitQuery = () =>
   (currentUnit = currentUnit === "us" ? "metric" : "us");
 
 export function handleUnitSwitchToggler() {
   const ids = ["temperature", "feels-like"];
 
   toggleCelsius();
-  switchCurrentUnit();
+  switchCurrentUnitQuery();
 
   for (const id of ids) {
     const element = document.getElementById(id);
