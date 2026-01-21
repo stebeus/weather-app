@@ -8,8 +8,12 @@ import { currentUnitLabel } from "./unit-switcher";
 
 const main = document.querySelector("main");
 
-const setDatasetValue = (element, id, value) =>
-  (element.getElementById(id).dataset.value = value);
+function assignValuesToNode(node, id, key, formatter, formatOptions) {
+  const element = node.getElementById(id);
+
+  element.textContent = formatter ? formatter(key, formatOptions) : key;
+  if (element.hasAttribute("data-value")) element.dataset.value = key;
+}
 
 function renderForecast({
   resolvedAddress,
@@ -21,19 +25,27 @@ function renderForecast({
   const template = document.querySelector("#forecast-template");
   const clone = template.content.cloneNode(true);
 
-  setDatasetValue(clone, "temperature", temp);
-  setDatasetValue(clone, "feels-like", feelslike);
-  setDatasetValue(clone, "humidity", humidity);
+  assignValuesToNode(clone, "location", resolvedAddress, formatLocation);
 
-  clone.querySelector("#location").textContent =
-    formatLocation(resolvedAddress);
-  clone.querySelector("#temperature").textContent =
-    `${formatTemperature(temp, currentUnitLabel)}`;
-  clone.querySelector("#feels-like").textContent =
-    `${formatTemperature(feelslike, currentUnitLabel)}`;
-  clone.querySelector("#humidity").textContent +=
-    ` ${formatHumidity(humidity)}`;
-  clone.querySelector("#description").textContent = description;
+  assignValuesToNode(
+    clone,
+    "temperature",
+    temp,
+    formatTemperature,
+    currentUnitLabel,
+  );
+
+  assignValuesToNode(
+    clone,
+    "feels-like",
+    feelslike,
+    formatTemperature,
+    currentUnitLabel,
+  );
+
+  assignValuesToNode(clone, "humidity", humidity, formatHumidity);
+
+  assignValuesToNode(clone, "description", description);
 
   main.innerHTML = "";
   main.appendChild(clone);
