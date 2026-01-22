@@ -27,7 +27,7 @@ function assignValuesToElement(node, id, value, formatter, formatOptions) {
 
 function updateForecast(node) {
   main.innerHTML = "";
-  main.append(node);
+  if (node) main.append(node);
 }
 
 function renderForecast({
@@ -70,6 +70,7 @@ export async function renderFetchedTimeline(location, unit) {
     const weatherData = await fetchTimeline(location, unit);
     renderForecast(weatherData);
   } catch (error) {
+    updateForecast();
     console.error(error.message);
   }
 }
