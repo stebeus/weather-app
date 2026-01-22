@@ -19,7 +19,8 @@ export async function fetchTimeline(location, unit) {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
+      alert(`Request failed with error ${response.status}`);
+      throw new Error(`Response status: ${response.status}s`);
     }
 
     const data = await response.json();
