@@ -5,6 +5,7 @@ import {
   formatHumidity,
 } from "../utils/formatters";
 import { currentUnitLabel } from "./unit-switcher";
+import { renderLoader } from "./loader";
 import { loadWeatherIcon } from "./image-loader";
 
 const main = document.querySelector("main");
@@ -64,6 +65,7 @@ function renderForecast({
 }
 
 export async function renderFetchedTimeline(location, unit) {
+  updateForecast(renderLoader());
   try {
     const weatherData = await fetchTimeline(location, unit);
     renderForecast(weatherData);
