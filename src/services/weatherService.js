@@ -23,7 +23,6 @@ export async function fetchTimeline(location, unit) {
     }
 
     const data = await response.json();
-    console.log(data);
     return getWeather(data);
   } catch (error) {
     console.error(error.message);
