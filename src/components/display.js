@@ -68,6 +68,6 @@ export async function renderFetchedTimeline(location, unit) {
     const weatherData = await fetchTimeline(location, unit);
     renderForecast(weatherData);
   } catch (error) {
-    console.error(error);
+    console.error(error.message);
   }
 }
